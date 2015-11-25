@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-class Sphinx 
-
+class Sphinx < ActiveRecord::Base
+  unloadable
+  
   require 'shellwords'
 
   def self.search_redirect_path( projectId, revision, request )
@@ -86,7 +87,7 @@ class Sphinx
 
   #get sphinx document and compile it
   def self.checkout_and_compile( driver, repositoryPath, temporaryPath, redmineProjectName, sphinxMakefileHead, revision, username, password )
-    dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}" 
+	dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}" 
     if File.exists?(dirRevPath)
       return
     end
@@ -102,5 +103,4 @@ class Sphinx
   def self.esc(arg)
     Shellwords.shellescape(arg)
   end
-
 end

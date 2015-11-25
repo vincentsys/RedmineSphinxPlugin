@@ -6,14 +6,14 @@
 Redmine Sphinx Plugin
 =================================================
 
-本ツールは、Redmine上でSphinxドキュメントを表示するためのプラグインです。
+This tool is a plug-in for displaying the Sphinx documents on Redmine.
 
-リポジトリ上に存在するsphinxドキュメントを自動的にコンパイルし、Redmine上で表示することができます。
+The sphinx documents that exist on the repository automatically compiled and can be displayed on Redmine.
 
 .. image:: image/sphinx_plugin.png
    :scale: 100%
 
-目次
+Table of contents
 ------------
 
 .. toctree::

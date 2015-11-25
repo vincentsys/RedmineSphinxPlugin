@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-require 'redmine'
 
-Redmine::Plugin.register :redmine_sphinx do
+Redmine::Plugin.register :sphinx do
   name 'Redmine Sphinx plugin'
-  author 'nishio'
-  description 'This is a plugin for Redmine'
-  version '0.0.1'
+  author 'vincentsys'
+  description 'Sphinx docu plugin for redmine'
+  version '0.1.0'
 
   # Add sphinx document tab
   permission :sphinx, {:sphinx => [:index]}, :public => true

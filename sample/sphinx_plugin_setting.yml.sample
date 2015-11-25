@@ -3,10 +3,10 @@
 defaults: &defaults
 
   server:
-    #Public Root Directory
-    document_root_path: /var/www/
+    #Public Root Directory (i.e. /var/www/)
+    document_root_path: /opt/redmine/current/public/
     #Directory name to put your sphinx document
-    sphinx_dir: redminetest
+    sphinx_dir: doc
     #http server port
     server_port: 80
 

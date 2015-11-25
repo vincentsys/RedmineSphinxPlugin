@@ -21,6 +21,3 @@
 3. Copy RedmineSphinxPlugin directory to 'vender/plugins' on Redmine installed directory. 
 4. Copy sphinx_plugin_setting.yml.sample on RedmineSphinxPlugin/sample to config directory on redmine root directory, and change setting file name from sphinx_plugin_setting.yml.sample to sphinx_plugin_setting.yml.
 5. Restart your redmine.
-
-
-

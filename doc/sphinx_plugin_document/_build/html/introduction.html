@@ -1,29 +1,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Redmine Sphinx Pluginの概要 &mdash; Redmine Sphinx Plugin v1.0 documentation</title>
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <title>Overview of Redmine Sphinx Plugin &mdash; Redmine Sphinx Plugin 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '#',
+        URL_ROOT:    './',
         VERSION:     '1.0',
-        COLLAPSE_MODINDEX: false,
+        COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Redmine Sphinx Plugin v1.0 documentation" href="index.html" />
+    <link rel="top" title="Redmine Sphinx Plugin 1.0 documentation" href="index.html" />
     <link rel="prev" title="Redmine Sphinx Plugin" href="index.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -32,66 +36,62 @@
         <li class="right" >
           <a href="index.html" title="Redmine Sphinx Plugin"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Redmine Sphinx Plugin v1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Redmine Sphinx Plugin 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="redmine-sphinx-plugin">
-<h1>Redmine Sphinx Pluginの概要<a class="headerlink" href="#redmine-sphinx-plugin" title="Permalink to this headline">¶</a></h1>
-<p>本ツールは、以下の機能を提供するRedmineプラグインです。</p>
-<div class="section" id="id1">
-<h2>機能<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="overview-of-redmine-sphinx-plugin">
+<h1>Overview of Redmine Sphinx Plugin<a class="headerlink" href="#overview-of-redmine-sphinx-plugin" title="Permalink to this headline">¶</a></h1>
+<p>This tool is a Redmine plug-in that provides the following functions.</p>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Redmine上でのSphinxドキュメントの表示</li>
-<li>リポジトリにアップロードされたSphinxドキュメントの自動コンパイル</li>
+<li>Display of Sphinx documents on Redmine</li>
+<li>Automatic compilation of Sphinx documents that have been uploaded to the repository</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>注意事項<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>本プラグインを利用するためには、あらかじめRedmine上でプロジェクトの作成、およびリポジトリの設定を行っておく必要があります</li>
-<li>リポジトリ内のSphinx Makefileを検索し、makeを行うことで、ドキュメントのコンパイルをしています。
-Makefileが存在しない場合は、Sphinxドキュメントを正しく表示することができません。</li>
-<li>現状では、Gitリポジトリ以外には対応していません</li>
+<li>In order to use this plug-in, you must have done in advance the creation of project on Redmine, and the setting of the repository</li>
+<li>Find the Sphinx Makefile in the repository, it is possible to carry out the make, you have to compile the document. If the Makefile does not exist, it will not be able to correctly display the Sphinx document.</li>
+<li>At present, it does not support other than Git repository</li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>本プラグインの使い方<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>本プラグインをインストールすると、SphinxドキュメントのタブがRedmineのプロジェクトメニューバー上に表示されます(図1)。</p>
-<a class="reference external image-reference" href="_images/menubar.png"><img alt="_images/menubar.png" src="_images/menubar.png" style="width: 966.0px; height: 112.0px;" /></a>
-<p>図1: プロジェクトメニューバー上に追加されたSphinxドキュメントタブ</p>
-<p>Sphinxドキュメントのタブをクリックすると、リポジトリ一覧が表示されます(図2)。</p>
-<a class="reference external image-reference" href="_images/sphinx_plugin.png"><img alt="_images/sphinx_plugin.png" src="_images/sphinx_plugin.png" style="width: 788.0px; height: 529.0px;" /></a>
-<p>図2: Sphinxドキュメントの一覧表示</p>
-<p>ページ内のShow Documentリンクをクリックすると、リポジトリ内のsphinxドキュメントを自動的に探して表示します。</p>
+<div class="section" id="how-to-use-this-plug-in">
+<h2>How to use this plug-in<a class="headerlink" href="#how-to-use-this-plug-in" title="Permalink to this headline">¶</a></h2>
+<p>After installing this plug-in, tab of the Sphinx document appears on the Redmine Project menu bar (Figure 1).</p>
+<a class="reference internal image-reference" href="_images/menubar.png"><img alt="_images/menubar.png" src="_images/menubar.png" style="width: 966.0px; height: 112.0px;" /></a>
+<p>Figure 1: Sphinx document tab that has been added to the Project menu bar</p>
+<p>If you click on the tab of the Sphinx document, the repository list is displayed (Figure 2).</p>
+<a class="reference internal image-reference" href="_images/sphinx_plugin.png"><img alt="_images/sphinx_plugin.png" src="_images/sphinx_plugin.png" style="width: 788.0px; height: 529.0px;" /></a>
+<p>Figure 2: List of Sphinx document</p>
+<p>When you click the Show Document link in the page to display the sphinx document in the repository automatically Looking.</p>
 </div>
-<div class="section" id="id4">
-<h2>インストール方法<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>本プラグインを利用するためには、あらかじめSettingslogicをインストールしておく必要があります。
-Settingslogicは以下のコマンドでインストールすることができます。</p>
+<div class="section" id="how-to-install">
+<h2>How to install<a class="headerlink" href="#how-to-install" title="Permalink to this headline">¶</a></h2>
+<p>In order to use this plug-in, you must install the previously Settingslogic. Settingslogic you can install with the following command.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>gem install settingslogic
 </pre></div>
 </div>
-<p>本プラグインはgithubからダウンロードが可能です。適当なディレクトリに移動し、以下のコマンドを実行して
-プラグインを取得してください。</p>
+<p>This plug-in can be downloaded from github. Go to the appropriate directory, please obtain the plug-in by running the following command.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/nishio-dens/RedmineSphinxPlugin.git
 </pre></div>
 </div>
-<p>取得したRedmineSphinxPluginディレクトリを、Redmineのプラグインディレクトリ内の vendor/plugins/ にコピーしてください。</p>
-<p>その際、RedmineSphinxPluginディレクトリをredmine_sphinxに改名してください。</p>
-<p>例えば、取得したプラグインディレクトリが/home/test/Download 内にあり、Redmineが /var/test/redmine にインストールされている場合、
-以下のコマンドを実行してコピーを行ってください。</p>
+<p>The RedmineSphinxPlugin directory acquired, please copy vendor / plugins / in in the Redmine plug-in directory.</p>
+<p>In that case, please rename RedmineSphinxPlugin directory to redmine_sphinx.</p>
+<p>For example, located in the acquired plug-in directory is / home / test / in Download, if Redmine is installed in / var / test / redmine, please do the copy by running the following command.</p>
 <div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>cp -rf /home/test/Download/RedmineSphinxPlugin/ /var/test/redmine/vendor/plugins/redmine_sphinx
 </pre></div>
 </div>
-<p>最後に、Redmine Sphinxプラグインの設定を行います。</p>
-<p>設定ファイルのサンプルは、Redmine Sphinxプラグインディレクトリ内の、sample/sphinx_plugin_setting.yml.sampleに存在しています。</p>
-<p>サンプル設定ファイルを、Redmineがインストールされているディレクトリ内の config/sphinx_plugin_setting.yml に設置してください。</p>
+<p>Finally, we will make the setting of Redmine Sphinx plug-ins.</p>
+<p>A sample configuration file, in the Redmine Sphinx plugin directory, has been present in the sample / sphinx_plugin_setting.yml.sample.</p>
+<p>A sample configuration file, please be installed in config / sphinx_plugin_setting.yml in the directory that Redmine is installed.</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">defaults</span><span class="p-Indicator">:</span> <span class="nl">&amp;defaults</span>
 
   <span class="l-Scalar-Plain">server</span><span class="p-Indicator">:</span>
@@ -117,9 +117,9 @@ Settingslogicは以下のコマンドでインストールすることができ�
   <span class="l-Scalar-Plain">&lt;&lt;</span><span class="p-Indicator">:</span> <span class="nv">*defaultsdefaults</span><span class="p-Indicator">:</span> <span class="nl">&amp;defaults</span>
 </pre></div>
 </div>
-<p>本プラグインでは、コンパイルしたsphinxドキュメントを、ウェブに公開されているディレクトリに設置して表示を行います。</p>
-<p>document_root_pathには公開ディレクトリのルートパスを、sphinx_dirにはコンパイル済みsphinxドキュメント設置するディレクトリ名を指定してください。</p>
-<p>以上で設定は完了です。</p>
+<p>In this plug-in, and a sphinx document was compiled, make the display is installed in a directory that is published to the web.</p>
+<p>The root path of the public directory in document_root_path, please specify the name of the directory to be installed compiled sphinx document to sphinx_dir.</p>
+<p>This completes the set above.</p>
 </div>
 </div>
 
@@ -127,45 +127,47 @@ Settingslogicは以下のコマンドでインストールすることができ�
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-            <h3><a href="index.html">Table Of Contents</a></h3>
-            <ul>
-<li><a class="reference external" href="#">Redmine Sphinx Pluginの概要</a><ul>
-<li><a class="reference external" href="#id1">機能</a></li>
-<li><a class="reference external" href="#id2">注意事項</a></li>
-<li><a class="reference external" href="#id3">本プラグインの使い方</a></li>
-<li><a class="reference external" href="#id4">インストール方法</a></li>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Overview of Redmine Sphinx Plugin</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#how-to-use-this-plug-in">How to use this plug-in</a></li>
+<li><a class="reference internal" href="#how-to-install">How to install</a></li>
 </ul>
 </li>
 </ul>
 
-            <h4>Previous topic</h4>
-            <p class="topless"><a href="index.html"
-                                  title="previous chapter">Redmine Sphinx Plugin</a></p>
-            <h3>This Page</h3>
-            <ul class="this-page-menu">
-              <li><a href="_sources/introduction.txt"
-                     rel="nofollow">Show Source</a></li>
-            </ul>
-          <div id="searchbox" style="display: none">
-            <h3>Quick search</h3>
-              <form class="search" action="search.html" method="get">
-                <input type="text" name="q" size="18" />
-                <input type="submit" value="Go" />
-                <input type="hidden" name="check_keywords" value="yes" />
-                <input type="hidden" name="area" value="default" />
-              </form>
-              <p class="searchtip" style="font-size: 90%">
-              Enter search terms or a module, class or function name.
-              </p>
-          </div>
-          <script type="text/javascript">$('#searchbox').show(0);</script>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Redmine Sphinx Plugin</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -174,12 +176,12 @@ Settingslogicは以下のコマンドでインストールすることができ�
         <li class="right" >
           <a href="index.html" title="Redmine Sphinx Plugin"
              >previous</a> |</li>
-        <li><a href="index.html">Redmine Sphinx Plugin v1.0 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">Redmine Sphinx Plugin 1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-      &copy; Copyright 2011, shinsuke nishio.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2011, shinsuke nishio.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
     </div>
   </body>
 </html>

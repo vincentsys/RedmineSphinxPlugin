@@ -1,83 +1,79 @@
 ====================================
-Redmine Sphinx Pluginの概要
+Overview of Redmine Sphinx Plugin
 ====================================
 
-本ツールは、以下の機能を提供するRedmineプラグインです。
+This tool is a Redmine plug-in that provides the following functions.
 
-機能
---------
-
-* Redmine上でのSphinxドキュメントの表示
-* リポジトリにアップロードされたSphinxドキュメントの自動コンパイル
-
-注意事項
+Functions
 -----------------------
 
-* 本プラグインを利用するためには、あらかじめRedmine上でプロジェクトの作成、およびリポジトリの設定を行っておく必要があります
-* リポジトリ内のSphinx Makefileを検索し、makeを行うことで、ドキュメントのコンパイルをしています。
-  Makefileが存在しない場合は、Sphinxドキュメントを正しく表示することができません。
-* 現状では、Gitリポジトリ以外には対応していません
+* Display of Sphinx documents on Redmine
+* Automatic compilation of Sphinx documents that have been uploaded to the repository
+
+Notes
+-----------------------
+
+* In order to use this plug-in, you must have done in advance the creation of project on Redmine, and the setting of the repository
+* Find the Sphinx Makefile in the repository, it is possible to carry out the make, you have to compile the document. If the Makefile does not exist, it will not be able to correctly display the Sphinx document.
+* At present, it does not support other than Git repository
 
 
-本プラグインの使い方
+How to use this plug-in
 -------------------------
 
-本プラグインをインストールすると、SphinxドキュメントのタブがRedmineのプロジェクトメニューバー上に表示されます(図1)。
+After installing this plug-in, tab of the Sphinx document appears on the Redmine Project menu bar (Figure 1).
 
 .. image:: image/menubar.png
   :scale: 100%
 
-図1: プロジェクトメニューバー上に追加されたSphinxドキュメントタブ
+Figure 1: Sphinx document tab that has been added to the Project menu bar
 
 
-Sphinxドキュメントのタブをクリックすると、リポジトリ一覧が表示されます(図2)。
+If you click on the tab of the Sphinx document, the repository list is displayed (Figure 2).
 
 .. image:: image/sphinx_plugin.png
   :scale: 100%
 
-図2: Sphinxドキュメントの一覧表示
+Figure 2: List of Sphinx document
 
 
-ページ内のShow Documentリンクをクリックすると、リポジトリ内のsphinxドキュメントを自動的に探して表示します。
+When you click the Show Document link in the page to display the sphinx document in the repository automatically Looking.
 
 
 
-インストール方法
+How to install
 -----------------
 
-本プラグインを利用するためには、あらかじめSettingslogicをインストールしておく必要があります。
-Settingslogicは以下のコマンドでインストールすることができます。
+In order to use this plug-in, you must install the previously Settingslogic. Settingslogic you can install with the following command.
 
 .. code-block:: bash
 
   $ gem install settingslogic
 
 
-本プラグインはgithubからダウンロードが可能です。適当なディレクトリに移動し、以下のコマンドを実行して
-プラグインを取得してください。
+This plug-in can be downloaded from github. Go to the appropriate directory, please obtain the plug-in by running the following command.
 
 .. code-block:: bash
 
   $ git clone git://github.com/nishio-dens/RedmineSphinxPlugin.git
 
 
-取得したRedmineSphinxPluginディレクトリを、Redmineのプラグインディレクトリ内の vendor/plugins/ にコピーしてください。
+The RedmineSphinxPlugin directory acquired, please copy vendor / plugins / in in the Redmine plug-in directory.
 
-その際、RedmineSphinxPluginディレクトリをredmine_sphinxに改名してください。
+In that case, please rename RedmineSphinxPlugin directory to redmine_sphinx.
 
-例えば、取得したプラグインディレクトリが/home/test/Download 内にあり、Redmineが /var/test/redmine にインストールされている場合、
-以下のコマンドを実行してコピーを行ってください。
+For example, located in the acquired plug-in directory is / home / test / in Download, if Redmine is installed in / var / test / redmine, please do the copy by running the following command.
 
 .. code-block:: bash
 
   $ cp -rf /home/test/Download/RedmineSphinxPlugin/ /var/test/redmine/vendor/plugins/redmine_sphinx
 
 
-最後に、Redmine Sphinxプラグインの設定を行います。
+Finally, we will make the setting of Redmine Sphinx plug-ins.
 
-設定ファイルのサンプルは、Redmine Sphinxプラグインディレクトリ内の、sample/sphinx_plugin_setting.yml.sampleに存在しています。
+A sample configuration file, in the Redmine Sphinx plugin directory, has been present in the sample / sphinx_plugin_setting.yml.sample.
 
-サンプル設定ファイルを、Redmineがインストールされているディレクトリ内の config/sphinx_plugin_setting.yml に設置してください。
+A sample configuration file, please be installed in config / sphinx_plugin_setting.yml in the directory that Redmine is installed.
 
 .. code-block:: yaml
 
@@ -106,9 +102,9 @@ Settingslogicは以下のコマンドでインストールすることができ�
     <<: *defaultsdefaults: &defaults
   
 
-本プラグインでは、コンパイルしたsphinxドキュメントを、ウェブに公開されているディレクトリに設置して表示を行います。
+In this plug-in, and a sphinx document was compiled, make the display is installed in a directory that is published to the web.
 
-document_root_pathには公開ディレクトリのルートパスを、sphinx_dirにはコンパイル済みsphinxドキュメント設置するディレクトリ名を指定してください。
+The root path of the public directory in document_root_path, please specify the name of the directory to be installed compiled sphinx document to sphinx_dir.
 
-以上で設定は完了です。
+This completes the set above.
 

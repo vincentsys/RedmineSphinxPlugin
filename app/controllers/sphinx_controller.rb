@@ -48,5 +48,5 @@ class SphinxController < ApplicationController
       repositoryType = "mercurial"
     end
   end
-    
+  
 end

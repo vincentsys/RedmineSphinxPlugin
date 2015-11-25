@@ -1,4 +1,6 @@
-class SubversionDriver
+class SubversionDriver < ActiveRecord::Base
+  unloadable
+  
   def checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefilehead, revision, username, password)
     dirPath = "#{esc temporaryPath}/#{esc redmineProjectName}"
     dirRevPath = "#{dirPath}/#{esc revision}" 
