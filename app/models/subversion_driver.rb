@@ -1,4 +1,4 @@
-class SubversionDriver < ActiveRecord::Base
+class SubversionDriver
   unloadable
   
   def checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefilehead, revision, username, password)

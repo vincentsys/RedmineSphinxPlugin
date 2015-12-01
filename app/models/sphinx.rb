@@ -1,6 +1,6 @@
-# -*- coding: utf-8 -*-
+require 'logger'
 
-class Sphinx < ActiveRecord::Base
+class Sphinx 
   unloadable
   
   require 'shellwords'
@@ -87,14 +87,22 @@ class Sphinx < ActiveRecord::Base
 
   #get sphinx document and compile it
   def self.checkout_and_compile( driver, repositoryPath, temporaryPath, redmineProjectName, sphinxMakefileHead, revision, username, password )
+    
+	log = Logger.new('log.txt')
 	dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}" 
+	
+	log.debug "dirRevPath: " + dirRevPath 
+	
     if File.exists?(dirRevPath)
       return
     end
     driver.checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefileHead, revision, username, password )
     doc = search_makefile( dirRevPath, sphinxMakefileHead )
+	log.debug "doc: " + doc 
+	
     if doc
       doc = doc.gsub( /(Makefile$)/ , "")
+	  log.debug "doc: " + doc 
       system( "cd #{esc doc}; make html")
     end
   end

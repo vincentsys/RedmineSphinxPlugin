@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-class GitDriver < ActiveRecord::Base
+class GitDriver
   unloadable
   
   def checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefilehead, revision, username, password)
