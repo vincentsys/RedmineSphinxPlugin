@@ -1,4 +1,4 @@
-# -*- coding: undecided -*-
+# encoding: utf-8
 module SphinxHelper
   def truncate_at_line_break(text, length = 255)
     if text
