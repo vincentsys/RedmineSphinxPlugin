@@ -60,13 +60,13 @@ This plug-in can be downloaded from github. Go to the appropriate directory, ple
 
 The RedmineSphinxPlugin directory acquired, please copy vendor / plugins / in in the Redmine plug-in directory.
 
-In that case, please rename RedmineSphinxPlugin directory to redmine_sphinx.
+In that case, please rename RedmineSphinxPlugin directory to sphinx.
 
 For example, located in the acquired plug-in directory is / home / test / in Download, if Redmine is installed in / var / test / redmine, please do the copy by running the following command.
 
 .. code-block:: bash
 
-  $ cp -rf /home/test/Download/RedmineSphinxPlugin/ /var/test/redmine/vendor/plugins/redmine_sphinx
+  $ cp -rf /home/test/Download/RedmineSphinxPlugin/ /var/test/redmine/vendor/plugins/sphinx
 
 
 Finally, we will make the setting of Redmine Sphinx plug-ins.

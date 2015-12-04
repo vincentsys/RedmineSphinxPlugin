@@ -19,5 +19,6 @@
 1. To use this plugin, you need to install Settingslogic using ruby gems. (command: gem install settingslogic)
 2. Download this plugin using 'git clone git:github.com/nishio-dens/RedmineSphinxPlugin.git' command.
 3. Copy RedmineSphinxPlugin directory to 'vender/plugins' on Redmine installed directory. 
-4. Copy sphinx_plugin_setting.yml.sample on RedmineSphinxPlugin/sample to config directory on redmine root directory, and change setting file name from sphinx_plugin_setting.yml.sample to sphinx_plugin_setting.yml.
-5. Restart your redmine.
+4. Rename RedmineSphinxPlugin directory to sphinx
+5. Copy sphinx_plugin_setting.yml.sample on RedmineSphinxPlugin/sample to config directory on redmine root directory, and change setting file name from sphinx_plugin_setting.yml.sample to sphinx_plugin_setting.yml.
+6. Restart your redmine.
