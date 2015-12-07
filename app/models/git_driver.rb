@@ -1,9 +1,9 @@
 class GitDriver
   unloadable
-  
+
   def checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefilehead, revision, username, password)
     dirPath = "#{esc temporaryPath}/#{esc redmineProjectName}"
-    dirRevPath = "#{dirPath}/#{esc revision}" 
+    dirRevPath = "#{dirPath}/#{esc revision}"
     dirHeadPath = "#{dirPath}/head"
 
     #git clone, and get HEAD
@@ -16,7 +16,7 @@ class GitDriver
     #git revision copy
     system("cp","-rf", dirHeadPath, dirRevPath)
     #git checkout
-    checkoutCommand = "cd #{dirRevPath}" + ";" + "git checkout #{esc revision}" 
+    checkoutCommand = "cd #{dirRevPath}" + ";" + "git checkout #{esc revision}"
     system(checkoutCommand)
   end
 

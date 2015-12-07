@@ -1,8 +1,8 @@
 require 'logger'
 
-class Sphinx 
+class Sphinx
   unloadable
-  
+
   require 'shellwords'
 
   def self.search_redirect_path( projectId, revision, request )
@@ -54,7 +54,7 @@ class Sphinx
     password = repository.password
 
     case repository.scm
-    when Redmine::Scm::Adapters::GitAdapter 
+    when Redmine::Scm::Adapters::GitAdapter
       driver = GitDriver.new
     when Redmine::Scm::Adapters::SubversionAdapter
       driver = SubversionDriver.new
@@ -69,9 +69,9 @@ class Sphinx
 
   #find sphinx makefile
   def self.search_makefile(path, sphinxMakefileHead)
-    if FileTest.directory?( path ) 
+    if FileTest.directory?( path )
       Dir.glob("#{path}/**/Makefile").each do |filepath|
-        found = /^#{sphinxMakefileHead}/ =~ File.read(filepath) 
+        found = /^#{sphinxMakefileHead}/ =~ File.read(filepath)
         if found
           return filepath
         end
@@ -87,22 +87,26 @@ class Sphinx
 
   #get sphinx document and compile it
   def self.checkout_and_compile( driver, repositoryPath, temporaryPath, redmineProjectName, sphinxMakefileHead, revision, username, password )
-    
+
 	log = Logger.new('log.txt')
-	dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}" 
-	
-	log.debug "dirRevPath: " + dirRevPath 
-	
+	dirRevPath = "#{esc temporaryPath}/#{esc redmineProjectName}/#{esc revision}"
+  dirProjectPath = "#{esc temporaryPath}/#{esc redmineProjectName}"
+
+	log.debug "dirRevPath: " + dirRevPath
+
     if File.exists?(dirRevPath)
       return
     end
+    #clean old versions of doc
+    FileUtils.rm_rf(Dir.glob(dirProjectPath + '/*'))
+    #checkout new doc
     driver.checkout( repositoryPath, temporaryPath, redmineProjectName, sphinxMakefileHead, revision, username, password )
     doc = search_makefile( dirRevPath, sphinxMakefileHead )
-	log.debug "doc: " + doc 
-	
+	log.debug "doc: " + doc
+
     if doc
       doc = doc.gsub( /(Makefile$)/ , "")
-	  log.debug "doc: " + doc 
+	  log.debug "doc: " + doc
       system( "cd #{esc doc}; make html")
     end
   end

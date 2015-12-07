@@ -62,7 +62,7 @@
 <% if ( @lastscmid == nil ) then %>
 <% next %>
 <% end %>
-<% @binfo = @changeset.select{|cdata| cdata['revision']== @lastscmid } %> 
+<% @binfo = @changeset.select{|cdata| cdata['revision']== @lastscmid } %>
 <td>  <%= link_to 'Show Document', { :controller => 'sphinx', :action => 'show', :project_id => @projectId, :revision => @lastscmid }, :target => '_blank' %>  </td>
 <td> <%= @lastscmid %> </td>
 <td> <%= format_time(@binfo[0].committed_on) %> </td>
